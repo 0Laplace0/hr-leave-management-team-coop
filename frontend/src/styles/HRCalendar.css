@@ -1,0 +1,148 @@
+.hr-page {
+  padding: 16px 18px;
+  background: #ffffff;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color: #000;
+}
+
+.hr-topbar {
+  background: #f4f6f8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+
+.hr-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #000;
+}
+
+.hr-home { font-size: 18px; }
+
+.hr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+
+.hr-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #000;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.dot-today { background: #6b7cff; }
+.dot-sick { background: #ff9aa2; }
+.dot-personal { background: #9dd7ff; }
+.dot-vacation { background: #8ee6c6; }
+
+.hr-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hr-btn {
+  border: 1px solid #d7dee6;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #000;
+}
+
+.hr-btn:hover { 
+  background: #6c88cd; 
+  color: #fff; 
+}
+
+.hr-btn-primary {
+  border-color: #6c88cd;
+  background: #6c88cd;
+  color: #fff;
+  padding: 8px 14px;
+}
+
+.hr-btn-primary:hover { filter: brightness(0.95); }
+
+.hr-calendar-card {
+  border: 1px solid #eef2f6;
+  border-radius: 12px;
+  padding: 10px 10px 14px;
+}
+
+/* ===== FullCalendar tune ===== */
+.fc {
+  --fc-border-color: #edf2f7;
+  --fc-page-bg-color: transparent;
+  --fc-today-bg-color: rgba(79, 70, 229, 0.04);
+  --fc-small-font-size: 12px;
+  color: #000;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.fc .fc-col-header-cell-cushion {
+  padding: 10px 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.fc .fc-daygrid-day-top { padding: 5px 8px 0; }
+
+.fc-daygrid-day-frame {
+  min-height: 170px;
+  padding: 10px;
+}
+
+
+.fc .fc-daygrid-day-number {
+  font-size: 12px;
+  color: #000;
+}
+
+.is-today-cell .fc-daygrid-day-frame {
+  outline: 2px solid rgba(79, 70, 229, 0.7);
+  outline-offset: -2px;
+}
+
+.is-today-cell .fc-daygrid-day-frame::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #4f46e5;
+}

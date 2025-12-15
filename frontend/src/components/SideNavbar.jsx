@@ -14,9 +14,9 @@ export default function SideNavbar({ collapsed, onToggle }) {
           <div className="brand-title">SYSTEM</div>
         </div>
 
-        <button className="collapse-btn" onClick={onToggle} title="Toggle">
+        {/* <button className="collapse-btn" onClick={onToggle} title="Toggle">
           {collapsed ? "»" : "«"}
-        </button>
+        </button> */}
       </div>
 
       <nav className="nav">

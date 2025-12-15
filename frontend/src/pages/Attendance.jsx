@@ -4,10 +4,8 @@ import "../styles/Attendance.css";
 
 /* ================= Utils ================= */
 const pad2 = (n) => String(n).padStart(2, "0");
-const formatDate = (d) =>
-  `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
-const formatTime = (d) =>
-  `${pad2(d.getHours())}:${pad2(d.getMinutes())}:${pad2(d.getSeconds())}`;
+const formatDate = (d) => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+const formatTime = (d) => `${pad2(d.getHours())}:${pad2(d.getMinutes())}:${pad2(d.getSeconds())}`;
 
 /* ================= Config ================= */
 const STORAGE_KEY = "attendance_records_v1";
@@ -34,7 +32,7 @@ export default function AttendancePage() {
   const [leaveType, setLeaveType] = useState("");
   const [leaveNote, setLeaveNote] = useState("");
 
-  /* ✅ date filter (แทนปุ่มล้างข้อมูล) */
+  /* ---------- date filter ---------- */
   const [selectedDate, setSelectedDate] = useState(formatDate(new Date()));
 
   /* ---------- realtime clock ---------- */
@@ -76,7 +74,6 @@ export default function AttendancePage() {
     return now > lateCutoff;
   }, [now]);
 
-  /* ✅ records ของวันที่ที่เลือก (สำหรับตาราง) */
   const filteredRecords = useMemo(() => {
     return records.filter((r) => {
       const recordDate = r.type === "LEAVE" && r.leaveDate ? r.leaveDate : r.date;
@@ -162,8 +159,6 @@ export default function AttendancePage() {
     setLeaveNote("");
     setLeaveType("");
     setShowLeaveForm(false);
-
-    // ✅ ถ้ากำลังดูวันที่เดียวกับที่ลาอยู่ จะเห็นรายการทันที
     setSelectedDate(leaveDate);
 
     alertSuccess("บันทึกสำเร็จ", "บันทึกการลาแล้ว");
