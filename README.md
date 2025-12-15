@@ -1,0 +1,37 @@
+### Backend
+```bash
+cd backend
+pnpm init
+pnpm install @prisma/client@6 express dotenv cors helmet bcrypt jsonwebtoken express-validator ws moment-timezone
+pnpm install -D prisma@6 nodemon
+pnpm install prisma@6 @prisma/client@6 --save-dev
+npx prisma init --datasource-provider MySQL
+pnpm prisma migrate dev --name init_schema	
+pnpm prisma generate
+```
+### Frontend
+```bash
+cd frontend
+pnpm create vite frontend --template react
+pnpm install react-router-dom axios lucide-react
+pnpm install jwt-decode
+pnpm install axios react-router-dom jwt-decode lucide-react moment
+pnpm install tailwindcss @tailwindcss/vite
+```
+### Project Setup
+```bash
+.env setup as env.example
+
+cd backend
+pnpm install
+pnpm prisma migrate dev --name init_schema
+pnpm prisma generate
+
+cd fronend
+pnpm install
+```
+### To Run Project
+```bash
+both backend and frontend using
+pnpm dev
+```
