@@ -19,7 +19,7 @@ body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, 
 
 .sidebar{
   height: 100vh;
-  width: 76px;
+  width: 85px;
   background:linear-gradient(180deg,var(--sidebar-bg),var(--sidebar-bg-2));
   color:var(--sidebar-text);
   padding:14px 12px;
@@ -111,6 +111,16 @@ body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, 
 .sidebar-bottom{
   margin-top:auto;
   padding:10px 8px 6px;
+}
+
+.nav-item.nav-logout:hover{
+  background: rgba(255, 0, 0, 0.2);
+  outline: 2px solid rgba(220, 38, 38, 0.35);
+}
+
+.nav-item.nav-logout:hover,
+.nav-item.nav-logout:hover .nav-icon{
+  color: #fee2e2;
 }
 
 .app-main{

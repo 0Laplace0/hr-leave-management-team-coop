@@ -26,19 +26,19 @@ export default function SideNavbar({ collapsed, onToggle }) {
       </nav>
 
       <div className="sidebar-bottom">
-        <NavItem to="/logout" label="Logout" icon={<FaSignOutAlt />} collapsed={collapsed}/>
+        <NavItem className="nav-logout" to="/logout" label="Logout" icon={<FaSignOutAlt />} collapsed={collapsed}/>
       </div>
     </aside>
   );
 }
 
-function NavItem({ to, label, icon, collapsed, end }) {
+function NavItem({ to, label, icon, collapsed, end, className = "" }) {
   return (
     <NavLink
       to={to}
       end={end}
       className={({ isActive }) =>
-        `nav-item ${isActive ? "active" : ""}`
+        `nav-item ${className} ${isActive ? "active" : ""}`
       }
     >
       <span className="nav-icon">{icon}</span>
@@ -46,3 +46,5 @@ function NavItem({ to, label, icon, collapsed, end }) {
     </NavLink>
   );
 }
+
+
